@@ -1,0 +1,6 @@
+classe 1: Main.java
+classe 2:Explorep.java
+classe 3:Extractmetdata.java
+classe 4:Encoder.java
+classe 5:Decoder.java
+classe6: .......(à voir)
