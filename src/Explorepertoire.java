@@ -7,9 +7,9 @@ import java.io.File;
  */
 
 public class Explorepertoire {
-	private String monChemin = ""; //mon chemin d'accès aux dossiers / fichiers
+	private String monChemin = ""; //mon chemin d'acces aux dossiers / fichiers
 	/*
-	 * si ces 2 attributs étaient private, il faudrait faire des accesseurs des accesseurs en écriture et lecture
+	 * si ces 2 attributs etaient private, il faudrait faire des accesseurs des accesseurs en ecriture et lecture
 	 */
 	
 	
@@ -23,7 +23,7 @@ public class Explorepertoire {
 	
 	/**
 	 * 
-	 * @param f est une référence
+	 * @param f est une reference
 	 * @return 
 	 */
 	public Boolean estVideF(File[] f) {
@@ -38,11 +38,11 @@ public class Explorepertoire {
 
 	public void lister(String monRep) {
 		File f = new File(monRep);
-		File[] mes_fichiers = f.listFiles(); //retourne un tableau de fichiers (à vérifier)
+		File[] mes_fichiers = f.listFiles(); //retourne un tableau de fichiers (a verifier)
 		if(!(estVideF(mes_fichiers))) {
 			int i = 0;
 			while(i<mes_fichiers.length) {
-				if(mes_fichiers[i].isDirectory()){	//.isDirectory vérifie si le fichier est un répertoire, si oui -> vrai, si non -> faux 
+				if(mes_fichiers[i].isDirectory()){	//.isDirectory verifie si le fichier est un repertoire, si oui -> vrai, si non -> faux 
 					System.out.println("Dossier : " + mes_fichiers[i].getName());
 					
 				}else if(mes_fichiers[i].isFile()) {
@@ -53,6 +53,9 @@ public class Explorepertoire {
 			}
 		}
 	}
+	
+	
+	
 	
 	
 }
