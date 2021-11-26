@@ -31,10 +31,14 @@ public class Explorepertoire {
 			return true;
 		return false;
 	}
-		
+	
+	
 	public void maListe() {
-		this.lister(this.monChemin);
+		
+		 this.lister(this.monChemin);
 	}
+	
+	
 
 	public void lister(String monRep) {
 		File f = new File(monRep);
