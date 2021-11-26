@@ -1,3 +1,5 @@
+package traitement;
+
 import java.io.File;
 
 /**
@@ -40,26 +42,18 @@ public class Explorepertoire {
 	
 	
 
-	public void lister(String monRep) {
-		File f = new File(monRep);
-		File[] mes_fichiers = f.listFiles(); //retourne un tableau de fichiers (a verifier)
+	public void lister(String cheminRep) {
+		File rep = new File(cheminRep);
+		File[] mes_fichiers = rep.listFiles(); //retourne un tableau de fichiers (a verifier)
 		if(!(estVideF(mes_fichiers))) {
-			int i = 0;
-			while(i<mes_fichiers.length) {
-				if(mes_fichiers[i].isDirectory()){	//.isDirectory verifie si le fichier est un repertoire, si oui -> vrai, si non -> faux 
-					System.out.println("Dossier : " + mes_fichiers[i].getName());
-					
-				}else if(mes_fichiers[i].isFile()) {
-					System.out.println("Fichier : " + mes_fichiers[i].getName());
-					
-				}
-				i++;
-			}
+			for (File f : mes_fichiers) {
+                if (f.isDirectory()) { //.isDirectory verifie si le fichier est un repertoire, si oui -> vrai, si non -> faux
+                    lister(f.getAbsolutePath());
+			    } else if (f.getName().endsWith(".png") || (f.getName().endsWith(".jpg"))) {
+			    	       System.out.println(f.getName());
+			    }
+		    }	    
 		}
-	}
-	
-	
-	
-	
+	}	
 	
 }
