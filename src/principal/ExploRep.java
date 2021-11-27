@@ -26,7 +26,7 @@ public class ExploRep {
         this.listerReper(this.cheminInitial);
     }
  
-    private void listerReper(String mon_reper) {
+    public void listerReper(String mon_reper) {
         File fichier = new File(mon_reper);
         File[] fichiers = fichier.listFiles();
         if (!estVide(fichiers)) {
