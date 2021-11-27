@@ -1,5 +1,10 @@
 package principal;
 
+/**
+ * 
+ * @author Jean-Baptiste / Elumalai Sriguru
+ *
+ */
 public class Main  {
 
 	public static void main(String[] args) {
@@ -27,28 +32,19 @@ public class Main  {
 		
 			
 			else if(args[0].equals("-d")) {
-				
-				/*File chemin = new File("C:\\Users\\vikne\\eclipse-workspace\\PROJETJAVA");
-				String contenu[] = chemin.list();
-				System.out.println("Liste des fichiers : ");
-				for(int i = 0; i<contenu.length;i++) {
-					System.out.println(contenu[i]);
-				}
-				*/
-				
-				
-				String chemin = "/mnt/c/Users/vikne/eclipse-workspace/PROJETJAVA";
+				String chemin = "/mnt/c/Users/vikne/eclipse-workspace/LEPROJETDEJAVAJBSRI/images";
 				ExploRep explore = new ExploRep(chemin);
 				explore.maList();
 				System.out.println("\n");
 				System.out.println("Exploration du chemin : " + chemin);
 				System.out.println("\n");
-				
 				System.out.println("\n");
 				
+				
+					
 			}
-			
+				
 		}
+			
 	}
-
 }
