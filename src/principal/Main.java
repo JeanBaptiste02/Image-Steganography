@@ -29,22 +29,14 @@ public class Main  {
 				System.out.println(" -e                  permet d'extraire un texte dissimule"
 						+ "dans un certain fichier");
 			}
-		
-			
 			else if(args[0].equals("-d")) {
-				String chemin = "/mnt/c/Users/vikne/eclipse-workspace/LEPROJETDEJAVAJBSRI/images";
-				ExploRep explore = new ExploRep(chemin);
-				explore.maList();
-				System.out.println("\n");
-				System.out.println("Exploration du chemin : " + chemin);
-				System.out.println("\n");
-				System.out.println("\n");
-				
-				
-					
-			}
-				
-		}
-			
+				String lechemin = "/mnt/c/Users/vikne/eclipse-workspace/LEPROJETDEJAVAJBSRI/images";
+				System.out.println("Le chemin a explorer est :  " + lechemin);
+			    System.out.println("\n");
+			    System.out.println("les fichiers presents sont : \n");
+				ExploRep explorer = new ExploRep(lechemin);
+				explorer.maListe();
+			}	
+		}	
 	}
 }
