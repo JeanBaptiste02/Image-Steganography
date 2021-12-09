@@ -1,5 +1,10 @@
 package principal;
 import java.io.File;
+import java.io.IOException;
+
+import com.drew.imaging.ImageMetadataReader;
+import com.drew.imaging.ImageProcessingException;
+import com.drew.metadata.Metadata;
 /**
  * 
  * @author DAMODARANE Jean-Baptiste / ELUMALAI Sriguru
@@ -42,28 +47,42 @@ public class Main {
 		case 2:
 			try {
 		    if(args[0].equals("-d") && args[1].equals(".")) {
-				String lechemin = "/mnt/c/Users/vikne/eclipse-workspace/PROJETJAVA/images";
-				System.out.println("Liste des images sous : " + lechemin);
+				String lechemin = "/mnt/c/Users/vikne/eclipse-workspace/PROJ/images";
+				System.out.println("Liste des images sous  : " + lechemin);
 			    System.out.println("------------------------------------");
 				ExploRep explorer = new ExploRep(lechemin);
 				explorer.maListe();
-			}else {
+				System.out.println(explorer.toString());
+			}else if(args[0].equals("-d")) {
 				File rep = new File(args[1]);
-				String lechemin = rep.getAbsolutePath(); // sa marche mais il faut mettre le repertoire en question dans src
+				String lechemin = rep.getAbsolutePath(); 
 				System.out.println("Liste des images sous : " + lechemin);
 			    System.out.println("------------------------------------");
 			    ExploRep explorer = new ExploRep(lechemin);
 				explorer.maListe();
-			} // ajouter une erreur (a voir)
+				System.out.println(explorer.toString());
+			} 
 			}catch(IllegalArgumentException error1) {
 				System.err.println(error1.getMessage());
 			}catch(DossierNexistePas error2) {
 				System.err.println(error2.getMessage());
 			}
-		    break;
 			
+			/*pour afficher les metadonnees d'une image*/
+			try {
+				if(args[0].equals("-f")) {
+					File monImage = new File(args[1]);
+					String lechemin = monImage.getAbsolutePath();
+					Metadata metadata = ImageMetadataReader.readMetadata(monImage);
+					Metadonnees var = new Metadonnees(metadata, lechemin);
+					var.print(metadata);
+				}
+			}catch(ImageProcessingException e1) {
+				System.err.println("Il y a ERREUR");
+			}catch(IOException e2) {
+				System.err.println(e2.getMessage());
+			}
 
 	}
-
 }
 }
