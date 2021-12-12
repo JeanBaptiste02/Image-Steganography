@@ -24,6 +24,22 @@ decoder (en mode CLI/GUI)
 ## Des Démonstrations avec images
 ![image](https://user-images.githubusercontent.com/91695685/145731729-0b5181f1-ce33-4435-819d-633df76f0e1f.png)
 
+<br></br>
+
+![image](https://user-images.githubusercontent.com/91695685/145731756-172194e1-5f07-4f1f-93ad-15ca3ac082a5.png)
+
+<br></br>
+
+![image](https://user-images.githubusercontent.com/91695685/145731790-459e15f5-e13f-48dd-a35f-5c2963193498.png)
+
+
+<br></br>
+
+![image](https://user-images.githubusercontent.com/91695685/145731820-6d9fefe0-0bcd-405c-bc13-42dd374e071c.png)
+
+
+<br></br>
+
 
   
 ## Licence et copyright
