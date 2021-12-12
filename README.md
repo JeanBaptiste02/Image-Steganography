@@ -5,7 +5,9 @@ Ici, le projet que nous avons à faire est basé sur la stéganographie-image, d
 Pour cela, nous utilisons le langage de programmation la plus connu : JAVA.
 
 Ce projet est divisé en deux partie : CLI et GUI.
+<h2>
 Les principales idées abordées dans ce projet est :
+</h2>
 <br>
 l'expolaration des (sous) répertoires / fichiers (en mode CLI/GUI) 
 </br>
