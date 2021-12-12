@@ -20,6 +20,11 @@ encoder (en mode CLI/GUI)
 <br>
 decoder (en mode CLI/GUI)
 </br>
+
+## Des Démonstrations avec images
+![image](https://user-images.githubusercontent.com/91695685/145731729-0b5181f1-ce33-4435-819d-633df76f0e1f.png)
+
+
   
 ## Licence et copyright
 © DAMODARANE Jean-Baptiste & ELUMALAI Sriguru
