@@ -7,10 +7,10 @@ Pour cela, nous utilisons le langage de programmation la plus connu : JAVA.
 Ce projet est divisé en deux partie : CLI et GUI.
 Les principales idées abordées dans ce projet est :
 <br>
-  -l'expolaration des (sous) répertoires / fichiers (en mode CLI/GUI) </br>
-  -l'extraction des métadonnées d'un fichier choisi par l'utilisateur (en mode CLI/GUI)
-  -encoder (en mode CLI/GUI)
-  -decoder (en mode CLI/GUI)
+*l'expolaration des (sous) répertoires / fichiers (en mode CLI/GUI) </br>
+*l'extraction des métadonnées d'un fichier choisi par l'utilisateur (en mode CLI/GUI)
+*encoder (en mode CLI/GUI)
+*decoder (en mode CLI/GUI)
   
 ## Licence et copyright
 © DAMODARANE Jean-Baptiste & ELUMALAI Sriguru
