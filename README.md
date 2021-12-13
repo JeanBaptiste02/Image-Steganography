@@ -44,6 +44,30 @@ decoder (en mode CLI/GUI)
 
 <br></br>
 
+<h3>Des Démonstrations en mode GUI </h3>
+
+<br></br>
+
+creation du fenetre:
+![image](https://user-images.githubusercontent.com/91695685/145737116-f1181935-e77c-4548-b3f7-0cca5889d497.png)
+
+<br></br>
+
+on choisit un fichier (dans notre cas : on choisit un fichier nommé UML.png):
+![image](https://user-images.githubusercontent.com/91695685/145737200-afb4ecf6-4752-4266-88cd-ab9af517e577.png)
+
+<br></br>
+
+affichage des métadonnées:
+![image](https://user-images.githubusercontent.com/91695685/145737231-d0a9a8a4-3283-4554-8bdf-ef9b914ba71b.png)
+
+<br></br>
+
+creation de l'onglet encore (à finir):
+![image](https://user-images.githubusercontent.com/91695685/145737278-bd13b686-2b51-49a4-9417-c17229718b1b.png)
+
+
+
 
   
 ## Licence et copyright
