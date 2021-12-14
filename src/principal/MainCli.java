@@ -114,7 +114,7 @@ public class MainCli {
 						String nomImageEncoder = input.nextLine();;
 						File finalImage = new File(dir, nomImageEncoder);			
 						ImageIO.write(newImage,"png",finalImage);
-						System.out.println("Votre image a bien été encoder !!!");
+						System.out.println("Votre image a bien ete encoder !!!");
 					}
 				    }catch (IOException e) {
 				    	System.err.println("INVALIDE");
