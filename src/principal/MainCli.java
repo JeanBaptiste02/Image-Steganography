@@ -1,6 +1,12 @@
 package principal;
+
+
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
+
+import javax.imageio.ImageIO;
 
 import com.drew.imaging.ImageMetadataReader;
 import com.drew.imaging.ImageProcessingException;
@@ -10,7 +16,7 @@ import com.drew.metadata.Metadata;
  * @author DAMODARANE Jean-Baptiste / ELUMALAI Sriguru
  *
  */
-public class Main {
+public class MainCli {
 	/**
 	 * 
 	 * @param args is an array of strings
@@ -20,6 +26,9 @@ public class Main {
 		System.out.println("#####################################\n");
 		System.out.println("#######  Image Steganographie  ######\n");
 		System.out.println("#####################################\n");
+		
+		@SuppressWarnings("resource")
+		Scanner input = new Scanner(System.in);
 		
 		
 		int nombre_args = args.length;
@@ -74,7 +83,7 @@ public class Main {
 					File monImage = new File(args[1]);
 					String lechemin = monImage.getAbsolutePath();
 					Metadata metadata = ImageMetadataReader.readMetadata(monImage);
-					Metadonnees var = new Metadonnees(metadata, lechemin);
+					Metadonnees var = new Metadonnees(lechemin);
 					var.print(metadata);
 				}
 			}catch(ImageProcessingException e1) {
@@ -82,6 +91,35 @@ public class Main {
 			}catch(IOException e2) {
 				System.err.println(e2.getMessage());
 			}
+			break;
+		
+		 case 4:
+			   try {
+					if(args[0].equals("-f") && args[2].equals("-s")) {
+						File dir = new File("."); //rep courant
+						
+						System.out.println("Veuillez saisir un mot de passe :");
+						String mdp = input.nextLine();
+						
+						String nomImage = args[1];
+						File inFile = new File(nomImage);
+						BufferedImage initImage = null;
+						initImage = ImageIO.read(inFile);
+						
+						String message = args[3];
+						String bitMsg = EncoderImage.monstring(message);
+						BufferedImage newImage = EncoderImage.encodeImage(bitMsg,initImage);
+						
+						System.out.println("Veuillez saisir le nom du fichier sous lequel vous souhaitez enregistrer l'image :");
+						String nomImageEncoder = input.nextLine();;
+						File finalImage = new File(dir, nomImageEncoder);			
+						ImageIO.write(newImage,"png",finalImage);
+						System.out.println("Votre image a bien été encoder !!!");
+					}
+				    }catch (IOException e) {
+				    	System.err.println("INVALIDE");
+				    }
+				    break;
 
 	}
 }

@@ -1,52 +1,55 @@
 package principal;
 
+import java.io.File;
+import java.io.IOException;
+
+import com.drew.imaging.ImageMetadataReader;
+import com.drew.imaging.ImageProcessingException;
 import com.drew.metadata.Directory;
 import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
 
 public class Metadonnees{
-	@SuppressWarnings("unused")
-	private String monChemin = "";
-	@SuppressWarnings("unused")
-	private Metadata meta;
 	
-	public Metadonnees(Metadata meta, String monChemin) {
-		this.meta = meta;
-		this.monChemin = monChemin;
+	private String monChemin = ""; //mon chemin d'acces a l'image
+	
+	public Metadonnees(String chemin) {
+		this.monChemin = chemin;
 	}
 	
-	public void print(Metadata meta) {
-        System.out.println();
-        System.out.println("-------------------------------------------------");
-        System.out.print(' ');
-        System.out.println();
+	public String lectureMeta() throws ImageProcessingException, IOException {
+		 File file = new File(this.monChemin);
+		 Metadata meta = ImageMetadataReader.readMetadata(file);
+         return this.print(meta);
 
+	}
+	
+	public String print(Metadata meta) {
+		String res = "";
         //
         // A Metadata object contains multiple Directory objects
         //
         for (Directory reper : meta.getDirectories()) {
-
             //
             // Each Directory stores values in Tag objects
             //
             for (Tag tag : reper.getTags()) {
-                System.out.format("[%s] - %s = %s \n", reper.getName(), tag.getTagName(), tag.getDescription());
-            }
-
-            //
-            // Each Directory may also contain error messages
-            //
-            for (String error : reper.getErrors()) {
-                System.err.println("ERROR: " + error);
+                res += "["+reper.getName()+"]"+ "-" +tag.getTagName()+ "=" +tag.getDescription()+ "\n";
             }
         }
+        return res;
 	}
 	
+	/*public Boolean imageVerifJpg(File image) {
+		if(image.getName().endsWith(".jpg")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	*/
 	
-	@SuppressWarnings("unused")
-	private static void print(Exception exception) {
-        System.err.println("EXCEPTION: " + exception);
- }
+	
 
 	
 }
