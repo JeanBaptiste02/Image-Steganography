@@ -12,17 +12,21 @@ import com.drew.imaging.ImageMetadataReader;
 import com.drew.imaging.ImageProcessingException;
 import com.drew.metadata.Metadata;
 /**
- * 
- * @author DAMODARANE Jean-Baptiste / ELUMALAI Sriguru
+ * la classe MainCli permet faire l'instanciation de toutes les classes et de les executer
+ * @author DAMODARANE Jean-Baptiste & ELUMALAI Sriguru
  *
  */
 public class MainCli {
+	
 	/**
+	 * Les instanciations et les appels des methodes et des classes sont faits dans cette methode
+	 * @param args est un tableau de String
 	 * 
-	 * @param args is an array of strings
 	 */
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
+		
+		
 		System.out.println("#####################################\n");
 		System.out.println("#######  Image Steganographie  ######\n");
 		System.out.println("#####################################\n");
@@ -92,35 +96,64 @@ public class MainCli {
 				System.err.println(e2.getMessage());
 			}
 			break;
+			
+			
+		case 3:
+			
+			if(args[0].equals("-f") && args[2].equals("-e")) {
+				File imageEncode = new File(args[1]);
+				
+				String filePath = imageEncode.getAbsolutePath();
+
+				File outFile = new File(filePath);
+				BufferedImage image = null;
+
+				image = ImageIO.read(outFile);
+
+				DecoderImage var = new DecoderImage(null, image);
+				
+				String bitMessage = var.decodeMessage(image);
+				@SuppressWarnings("unused")
+				String subBM = bitMessage.substring(bitMessage.length()-16,bitMessage.length());
+				System.out.println("le message secret est : \n"+var.getMessage(bitMessage));
+			}
+			
+			break;
+		
+			
 		
 		 case 4:
-			   try {
-					if(args[0].equals("-f") && args[2].equals("-s")) {
-						File dir = new File("."); //rep courant
-						
-						System.out.println("Veuillez saisir un mot de passe :");
-						String mdp = input.nextLine();
-						
-						String nomImage = args[1];
-						File inFile = new File(nomImage);
-						BufferedImage initImage = null;
-						initImage = ImageIO.read(inFile);
-						
-						String message = args[3];
-						String bitMsg = EncoderImage.monstring(message);
-						BufferedImage newImage = EncoderImage.encodeImage(bitMsg,initImage);
-						
-						System.out.println("Veuillez saisir le nom du fichier sous lequel vous souhaitez enregistrer l'image :");
-						String nomImageEncoder = input.nextLine();;
-						File finalImage = new File(dir, nomImageEncoder);			
-						ImageIO.write(newImage,"png",finalImage);
-						System.out.println("Votre image a bien ete encoder !!!");
-					}
-				    }catch (IOException e) {
-				    	System.err.println("INVALIDE");
-				    }
-				    break;
+			 try {
+                 if(args[0].equals("-f") && args[2].equals("-s")) {
 
+                         String nomImage = args[1];
+                         File inFile = new File(nomImage);
+                         BufferedImage initImage = null;
+                         initImage = ImageIO.read(inFile);
+
+                         String message = args[3];
+
+                         EncoderImage var = new EncoderImage(message,initImage); 
+                         String bitMsg = var.monstring(message);
+                         if (var.verifPng(inFile)) {
+                             BufferedImage newImage = var.encodeImage(bitMsg,initImage);
+                             System.out.println("Veuillez saisir le nom du fichier sous lequel vous souhaitez enregistrer l'image :");
+                             String nomImageEncoder = input.nextLine();
+                             File finalImage = new File(nomImageEncoder);
+                             ImageIO.write(newImage,"png",finalImage);
+                             String lechemin = finalImage.getAbsolutePath();
+                             //String lechemin = var.createImg(newImage);
+                             System.out.println("Votre image a bien ete encoder sous : " + lechemin);
+                         }
+                     }
+             } catch (ImageExtensionException e) {
+                 System.err.println(e.getMessage());
+             } catch (IOException e) {
+                  System.err.println("Impossible d'ouvrir l'image");
+             }
+		 
+
+			 break;
 	}
 }
 }

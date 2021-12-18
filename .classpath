@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/vikne/eclipse-workspace/LEPROJETDEJAVAJBSRI/lib/metadata-extractor-2.16.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vikne/eclipse-workspace2/PROJETS3/lib/metadata-extractor-2.16.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
