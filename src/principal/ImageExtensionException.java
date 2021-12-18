@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package principal;
 
 /**
@@ -16,3 +17,15 @@ public class ImageExtensionException extends Exception{
 	}
 
 }	
+=======
+package principal;
+
+@SuppressWarnings("serial")
+public class ImageExtensionException extends Exception{
+	
+	public ImageExtensionException() {
+		super("Erreur : vous devez choisir un fichier png pour cacher un message secret");
+	}
+
+}
+>>>>>>> 3f58618ecc103d0efeac5ad7b4c870f0710a1154
