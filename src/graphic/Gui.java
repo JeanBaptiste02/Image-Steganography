@@ -675,7 +675,7 @@ public class Gui extends JFrame{
                    EncoderImage var = new EncoderImage(message,initImage); 
                    String bitMsg = var.monstring(message);
                    if (var.verifPng(inFile)) {
-                       BufferedImage newImage = var.encodeImage(bitMsg,initImage);
+                       BufferedImage newImage = var.encodeLimage(bitMsg,initImage);
                        String nomImageEncoder = nomImg2.getText();
                        File finalImage = new File(nomImageEncoder);
                        ImageIO.write(newImage,"png",finalImage);
@@ -761,8 +761,8 @@ public class Gui extends JFrame{
 
 				DecoderImage var = new DecoderImage(null, image);
 				
-				String bitMessage = var.decodeMessage(image);
-				affMsgSec.setText(var.getMessage(bitMessage));
+				String bitMessage = var.decodeLeMessage(image);
+				affMsgSec.setText(var.retournMess(bitMessage));
   			}
   			} catch (IOException e1) {
                 //affMsgSec.setText("Impossible d'ouvrir l'image");

@@ -50,20 +50,20 @@ public class EncoderImage extends TabColor {
 		
 
 	/**
-	 * la methode encodeImage permet de cacher le message binaire dans une image
-	 * @param bit indique de bit
-	 * @param image indique l'image est question qui sera encode
+	 * la methode encodeLimage permet de cacher le message binaire dans une image
+	 * @param monBit indique de bit
+	 * @param monImage indique l'image est question qui sera encode
 	 * @return
 	 */
-	public  BufferedImage encodeImage (String bit, BufferedImage image) {
-		int ind = bit.length()-1; //valeur char de chaque charactere de 0 à length()-1
+	public  BufferedImage encodeLimage (String monBit, BufferedImage monImage) {
+		int ind = monBit.length()-1; //valeur char de chaque charactere de 0 à length()-1
 		
-		for (int x = image.getWidth()-1; x >= 0; x--) { //pour chacun des pixels
-			for (int y = image.getHeight()-1; y >= 0; y--) { //pour chacun des pixels
+		for (int x = monImage.getWidth()-1; x >= 0; x--) { //pour chacun des pixels
+			for (int y = monImage.getHeight()-1; y >= 0; y--) { //pour chacun des pixels
 							
-				Color c = new Color(image.getRGB(x,y)); //la couleur du pixel
+				Color c = new Color(monImage.getRGB(x,y)); //la couleur du pixel
 				//definitions des valeurs de r,g,b
-				byte[]tabCOL = getPixelImg(c); //methode est presente dans la classe TabColor
+				byte[]tabCOL = getPixelImg(c); //methode presente dans la classe TabColor
 				
 				byte[] tabCOL2 = new byte[3];
 				
@@ -79,7 +79,7 @@ public class EncoderImage extends TabColor {
 						}
 						
 						//permet de donner la valeur numerique des caracteres
-						char c1 = bit.charAt(ind); //retourne la valeur char de l'index specifie : derniere valeure ?
+						char c1 = monBit.charAt(ind); //retourne la valeur char de l'index specifie : derniere valeure ?
 						int i1 = Character.getNumericValue(c1); //valeur numerique de bit.charAt(pointer)
 				
 						if (i1 != bpf) {  
@@ -100,14 +100,14 @@ public class EncoderImage extends TabColor {
 				}
 			
 				Color newColor = new Color(Byte.toUnsignedInt(tabCOL2[0]), Byte.toUnsignedInt(tabCOL2[1]), Byte.toUnsignedInt(tabCOL2[2]));
-				image.setRGB(x,y,newColor.getRGB());
+				monImage.setRGB(x,y,newColor.getRGB());
 			}
 		}
-		return image;
+		return monImage;
 	}
 	
 	/**
-	 * la methode verifPng permet de verifier si l'extension du fichier image est png, si oui, elle retourne vrai, si non faux
+	 * la methode verifPng permet de verifier si le fichier est bien un png, si oui vrai, si non faux
 	 * @param f indique le fichier image
 	 * @return
 	 * @throws ImageExtensionException

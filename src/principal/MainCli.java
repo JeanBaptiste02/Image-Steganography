@@ -112,10 +112,10 @@ public class MainCli {
 
 				DecoderImage var = new DecoderImage(null, image);
 				
-				String bitMessage = var.decodeMessage(image);
+				String bitMessage = var.decodeLeMessage(image);
 				@SuppressWarnings("unused")
 				String subBM = bitMessage.substring(bitMessage.length()-16,bitMessage.length());
-				System.out.println("le message secret est : \n"+var.getMessage(bitMessage));
+				System.out.println("le message secret est : \n"+var.retournMess(bitMessage));
 			}
 			
 			break;
@@ -136,13 +136,12 @@ public class MainCli {
                          EncoderImage var = new EncoderImage(message,initImage); 
                          String bitMsg = var.monstring(message);
                          if (var.verifPng(inFile)) {
-                             BufferedImage newImage = var.encodeImage(bitMsg,initImage);
+                             BufferedImage newImage = var.encodeLimage(bitMsg,initImage);
                              System.out.println("Veuillez saisir le nom du fichier sous lequel vous souhaitez enregistrer l'image :");
                              String nomImageEncoder = input.nextLine();
                              File finalImage = new File(nomImageEncoder);
                              ImageIO.write(newImage,"png",finalImage);
                              String lechemin = finalImage.getAbsolutePath();
-                             //String lechemin = var.createImg(newImage);
                              System.out.println("Votre image a bien ete encoder sous : " + lechemin);
                          }
                      }

@@ -29,11 +29,11 @@ public class DecoderImage extends TabColor {
 	}
 
 	/**
-	 * la methode getMessage permet de retourner le message secret apres avoir decode
+	 * la methode retournMess permet de retourner le message secret apres avoir decode
 	 * @param encode indique le message encode
 	 * @return
 	 */
-	public String getMessage (String encode) {
+	public String retournMess (String encode) {
 		int compteur = encode.length()-1;
 		StringBuilder monMess = new StringBuilder();
 		int mesVal = encode.length()/8;
@@ -60,11 +60,11 @@ public class DecoderImage extends TabColor {
 	} 
 
 	/**
-	 * la methode decodeMessage permet de convertir le message en binaire et un message de charactere
+	 * la methode decodeLeMessage permet de convertir le message en binaire en un message de charactere
 	 * @param image indique l'image en question
 	 * @return
 	 */
-	public String decodeMessage(BufferedImage image) {
+	public String decodeLeMessage(BufferedImage image) {
 		StringBuilder constructBits = new StringBuilder();
 
 		int a = image.getWidth();
