@@ -9,7 +9,8 @@ Le projet se base sur le concept de <b>  steganographie </b>, dont l'objectif es
 <br></br>
 Pour ce projet, nous choisi avec la version javaSE-11
 
-## Utilisation et exécutions en mdoe CLI
+## Utilisation et exécutions en mode CLI
+
 Ce projet peut être exécuté en CLI sur la console à l'aide d'un <b>fichier jar</b>.
 <br></br>
 Ouvrir votre console Linux.
@@ -35,6 +36,18 @@ En mode CLI, l'utilisateur peut :
 <br></br>
         commande à taper : `java -jar myCli.jar -f nom_image.png -s "message_secret"`
 
-5. pour avoir des aides,
+5. pour avoir des aides
 <br></br>   
         commande à taper : `java -jar myCli.jar -h` ou `java -jar myCli.jar --help`
+
+
+## Utilisation et exécutions en mode GUI
+
+Ce projet peut être exécuté en GUI à l'aide d'un <b>fichier jar</b>.
+<br></br>
+le ficher se nomme : myGui.jar
+<br></br>
+
+Pour lancer la fenêtre, veuillez taper la commande : `java -jar myGui.jar`
+<br></br>
+Pour explorer un dossier:
