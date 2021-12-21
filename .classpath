@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/vikne/eclipse-workspace2/PROJETS3/lib/metadata-extractor-2.16.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vikne/eclipse-workspace2/PROJETS3/lib/apache/tika-app-2.1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

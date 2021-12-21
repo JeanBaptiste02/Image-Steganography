@@ -60,7 +60,7 @@ public class MainCli {
 		case 2:
 			try {
 		    if(args[0].equals("-d") && args[1].equals(".")) {
-				String lechemin = "/mnt/c/Users/vikne/eclipse-workspace/PROJ/images";
+				String lechemin = ".";
 				System.out.println("Liste des images sous  : " + lechemin);
 			    System.out.println("------------------------------------");
 				ExploRep explorer = new ExploRep(lechemin);
@@ -113,8 +113,7 @@ public class MainCli {
 				DecoderImage var = new DecoderImage(null, image);
 				
 				String bitMessage = var.decodeLeMessage(image);
-				@SuppressWarnings("unused")
-				String subBM = bitMessage.substring(bitMessage.length()-16,bitMessage.length());
+				
 				System.out.println("le message secret est : \n"+var.retournMess(bitMessage));
 			}
 			

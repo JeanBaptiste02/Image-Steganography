@@ -2,18 +2,16 @@ package principal;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
+
 
 /**
  * la classe EncoderImage permet de cacher un message secret dans un fichier image de type png
  * @author D.JEAN BAPTISTE & E.SRIGURU
  *
  */
-public class EncoderImage extends TabColor {
+public class EncoderImage extends FileExtension implements TabColor {
 	
-	private BufferedImage img;
+	
 	private String msg;
 	
 	/**
@@ -22,25 +20,25 @@ public class EncoderImage extends TabColor {
 	 * @param img indique l'image
 	 */
 	public EncoderImage(String message, BufferedImage img) {
+	    super(img);
 		this.msg = message;
-		this.img = img;
 	}
 
 	
 	/**
 	 * la methode monString permet de convertir message initial en message binaire
-	 * @param message
-	 * @return
+	 * @param message indique le message
+	 * @return retourne le message binaire
 	 */
-	public  String monstring (String message) {
-		byte[] convMess = message.getBytes(); // chaque caractère du message sera converti en "décimal" qui sera stocker dans un tableau
+	public String monstring (String message) {
+		byte[] convMess = message.getBytes(); // chaque caractere du message sera converti en "decimal" qui sera stocker dans un tableau
 		String messBinaire = "";
 		
 		int i = 0;
 		while(i<convMess.length) {
-			String strBin = Integer.toBinaryString(convMess[i]); // chaque décimal du tableau sera représenter en binaire
+			String strBin = Integer.toBinaryString(convMess[i]); // chaque decimal du tableau sera representer en binaire
 			while(strBin.length() < 8) {
-				strBin = "0" + strBin; // Les 0 du début étant supprimés lors de la conversion, on les rajoute
+				strBin = "0" + strBin; // Les 0 du debut etant supprimes lors de la conversion, on les rajoute
 			}
 		    messBinaire += strBin; 
 			i++;
@@ -51,11 +49,11 @@ public class EncoderImage extends TabColor {
 
 	/**
 	 * la methode encodeLimage permet de cacher le message binaire dans une image
-	 * @param monBit indique de bit
+	 * @param monBit indique le bit
 	 * @param monImage indique l'image est question qui sera encode
-	 * @return
+	 * @return retourne l'image
 	 */
-	public  BufferedImage encodeLimage (String monBit, BufferedImage monImage) {
+	public BufferedImage encodeLimage (String monBit, BufferedImage monImage) {
 		int ind = monBit.length()-1; //valeur char de chaque charactere de 0 à length()-1
 		
 		for (int x = monImage.getWidth()-1; x >= 0; x--) { //pour chacun des pixels
@@ -68,10 +66,10 @@ public class EncoderImage extends TabColor {
 				byte[] tabCOL2 = new byte[3];
 				
 				for (int i = 2; i >= 0; i--) { //Pour chacun des valeurs du tabCOL, on affecte une nouvelle valeure
-					if (ind >= 0) { //if we still have bits to encode, change to 1 or 0
+					if (ind >= 0) {
 						
 						int bpf;
-						//pour définir les dernieres valeurs des binaires
+						//pour definir les dernieres valeurs des binaires
 						if ((tabCOL[i] & 1) == 1) {
 							bpf = 1;
 						} else {
@@ -106,18 +104,18 @@ public class EncoderImage extends TabColor {
 		return monImage;
 	}
 	
+	
 	/**
-	 * la methode verifPng permet de verifier si le fichier est bien un png, si oui vrai, si non faux
-	 * @param f indique le fichier image
-	 * @return
-	 * @throws ImageExtensionException
+	 * la methode getPixelImg permet de retourner un tableau de contenant les valeurs binaires des couleurs r,g,b
+	 * @param c la couleur du pixel de l'image
+	 * @return retourne un tableau de valeurs binaires
 	 */
-	public Boolean verifPng(File f) throws ImageExtensionException{
-		if(f.getName().endsWith(".png")) {
-			return true;
-		} else {
-			throw new ImageExtensionException();
-		}
-		
+	public byte[] getPixelImg(Color c) {
+		//1 pixel est compose de rouge, vert et bleu
+	    byte r = (byte) c.getRed(); 
+        byte g = (byte) c.getGreen(); 
+        byte b = (byte) c.getBlue();
+		byte[] tab = {r,g,b}; 
+		return tab;
 	}
 }

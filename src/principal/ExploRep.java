@@ -5,11 +5,10 @@ import java.util.ArrayList;
 
 /**
  * la classe ExploRep permet d'explorer un repertoire, c'est a dire, de lister des fichiers images de type png et jpeg des dossiers et des sous dossiers
- * @author Jean-Baptiste and Sriguru
+ * @author D.JEAN BAPTISTE & E.SRIGURU
  *
  */
-public class ExploRep{
-	private String monChemin = ""; //mon chemin d'acces aux dossiers/fichiers
+public class ExploRep extends FileExtension{
 	private ArrayList<String> images = new ArrayList<String>(); //creation d'une arrayList
 	
 	
@@ -18,14 +17,14 @@ public class ExploRep{
 	 * @param monChemin indique le chemin de l'image
 	 */
 	public ExploRep(String monChemin) {
-		this.monChemin=monChemin;
+		super(monChemin);
 		
 	}
 	
 	/**
 	 * estVideF verifie si un tableau de fichier est vide, si oui, il retourne vraie, si non faux
 	 * @param f est un tableau de File et permet
-	 * @return 
+	 * @return retourne un booleen
 	 */
 	public Boolean estVideF(File[] f) {
 		if(f==null) //si le tableau de fichiers est vide
@@ -35,7 +34,7 @@ public class ExploRep{
 	
 	
 	/**
-	 * maListe permet de faire une liste des fichiers dans un certain chemin si le repertoire existe, si non il lance une exception
+	 * la methode maListe permet de faire une liste des fichiers dans un certain chemin si le repertoire existe, si non elle lance une exception
 	 * @throws DossierNexistePas
 	 */
 	public void maListe() throws DossierNexistePas{
@@ -58,7 +57,7 @@ public class ExploRep{
 			for (File f : mes_fichiers) {
                 if (f.isDirectory()) { //verifie si le fichier est un repertoire, si oui -> vrai, si non -> faux
                     lister(f.getAbsolutePath()); //recursive
-			    } else if (f.getName().endsWith(".png") || (f.getName().endsWith(".jpg"))) {
+			    } else if (imageVerifExt(f)) {
 			    	       images.add(f.getName()); //ajout les noms des image qui finissent pas png et jpg dans l'arrayList
 			    }
 		    }	    
@@ -67,7 +66,7 @@ public class ExploRep{
 	
 	/**
 	 * la methode toString permet d'afficher la liste des images
-	 * @return res
+	 * @return retourne le resultat a afficher
 	 */
 	public String toString() throws IllegalArgumentException{
 		String res = "";

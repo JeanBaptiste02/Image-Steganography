@@ -14,21 +14,19 @@ import com.drew.metadata.Tag;
  * @author D.JEAN BAPTISTE & E.SRIGURU
  *
  */
-public class Metadonnees{
+public class Metadonnees extends FileExtension{
 
-	private String monChemin = ""; //le chemin d'acces a l'image
-	
 	/**
 	 * Construit et initialise un chemin
 	 * @param chemin indique le chemin d'une image
 	 */
 	public Metadonnees(String chemin) {
-		this.monChemin = chemin;
+		super(chemin);
 	}
 	
 	/**
 	 * la methode lectureMeta permet de lire les metadonnees d'une image si le fichier est de type png ou jpeg, si non une exception est lancee
-	 * @return
+	 * @return retourne les metadonnees si le fichier est de bon type, si non elle lance une exception
 	 * @throws ImageProcessingException
 	 * @throws IOException
 	 */
@@ -43,9 +41,9 @@ public class Metadonnees{
 	}
 	
 	/**
-	 * la methode print permet d'afficher les metadonnes d'un fichier image donne et 
+	 * la methode print permet d'afficher les metadonnes d'un fichier image donne
 	 * @param meta indique les metadonnees
-	 * @return
+	 * @return retourne les metadonnees a afficher
 	 */
 	public String print(Metadata meta) {
 		String res = "";
@@ -60,20 +58,5 @@ public class Metadonnees{
         return res;
 	}
 	
-	/**
-	 * la methode imageVerifExt permet de verifier les extensions des fichiers images, si les extensions sont jpg et png, elle retourne vraie, si non, faux
-	 * @param image indique l'image dont on verifiera l'extension
-	 * @return
-	 */
-	public Boolean imageVerifExt(File image) {
-		if(image.getName().endsWith(".jpg") || image.getName().endsWith(".png")) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	
-
 	
 }
