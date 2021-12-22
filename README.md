@@ -51,19 +51,20 @@ le ficher se nomme : myGui.jar
 Pour lancer la fenêtre, veuillez taper la commande : `java -jar myGui.jar`
 <br></br>
 1. Pour explorer un dossier, l'utilisateur doit se placer dans l'onlget "Lister un repertoire", puis cliquer sur le boutton "choisissez un dossier' (pour choisir un dossier) et ensuite cliquer sur analyser
-![image](https://user-images.githubusercontent.com/91695685/146678770-c9a11784-7117-4247-b4a4-b543adcdd1a9.png)
+![image](https://user-images.githubusercontent.com/91695685/147091029-71debde3-2ab0-41b1-8603-93771f3d145f.png)
 
 <br></br>
 
-2. Pour afficher, l'utilisateur doit se placer dans l'onglet "Metadonnees", puis choisir un fichier image et ensuite examiner
-![image](https://user-images.githubusercontent.com/91695685/146679269-079960e7-104d-4468-8a9a-c18c884f6e05.png)
+2. Pour afficher les metadonnees d'une image, l'utilisateur doit se placer dans l'onglet "Metadonnees", puis choisir un fichier image et ensuite examiner
+![image](https://user-images.githubusercontent.com/91695685/147091137-e863be34-0429-47b1-a493-a2a8c9c1ae1d.png)
 
 <br></br>
 
 3. Pour encoder une image, l'utilisateur doit se placer dans l'onglet correspondant, puis choisir une image et taper nom de la nouvelle image qui va contenir le message. Ensuite taper le message secret et enfin appuyer sur le bouton cacher
-![image](https://user-images.githubusercontent.com/91695685/146679396-62f76a0d-2dfd-4792-8573-3dbe627d9ac4.png)
+![image](https://user-images.githubusercontent.com/91695685/147091253-4dca57d7-ab67-419a-8505-cd80b53321b8.png)
 
+<br></br>
 
-4. Pour decoder l'image, l'utilisateur doit choisir le fichier image qui contient le message secret et appuyer sur le bouton decoder
-![image](https://user-images.githubusercontent.com/91695685/146679570-16ded0d7-1a3e-4337-b5eb-ffe0736c5cc4.png)
+4. Pour decoder l'image, l'utilisateur doit se placer dans l'onglet correspondant, choisir le fichier image qui contient le message secret et appuyer sur le bouton decoder
+![image](https://user-images.githubusercontent.com/91695685/147091328-41b617f3-78cd-4169-9708-a0314f231803.png)
 
