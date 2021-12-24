@@ -22,7 +22,7 @@ En mode CLI, l'utilisateur peut :
 
 1. explorer un dossier, dont le nom sera passé en argument ou l'utilisateur devra mettre un '.'
 <br></br>
-        commande à taper : `java -jar myCli.jar d .`  ou `java -jar myCli.ajr -d images`
+        commande à taper : `java -jar myCli.jar d .`  ou `java -jar myCli.jar -d images`
 
 2. afficher les métadonnées d'un fichier image dont le nom sera passé en argument
 <br></br>
@@ -67,4 +67,3 @@ Pour lancer la fenêtre, veuillez taper la commande : `java -jar myGui.jar`
 
 4. Pour decoder l'image, l'utilisateur doit se placer dans l'onglet correspondant, choisir le fichier image qui contient le message secret et appuyer sur le bouton decoder
 ![image](https://user-images.githubusercontent.com/91695685/147091328-41b617f3-78cd-4169-9708-a0314f231803.png)
-
