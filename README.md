@@ -11,7 +11,7 @@ Pour ce projet, nous choisi avec la version javaSE-11
 
 ## Utilisation et exécutions en mode CLI
 
-Ce projet peut être exécuté en CLI sur la console à l'aide d'un <b>fichier jar</b>.
+Ce projet peut être exécuté en mode CLI sur la console à l'aide d'un <b>fichier jar</b>.
 <br></br>
 Ouvrir votre console Linux.
 <br></br>
@@ -20,19 +20,19 @@ le ficher se nomme : myCli.jar
 En mode CLI, l'utilisateur peut :
 <br></br>
 
-1. examiner explorer un dossier, dont le nom sera passé en paramètre et l'utilisateur devra mettre un '.'
+1. examiner explorer un dossier, dont le nom sera passé en paramètre ou l'utilisateur devra mettre un '.'
 <br></br>
         commande à taper : `java -jar myCli.jar d .`  ou `java -jar myCli.ajr -d images`
 
-2. afficher les métadonnées d'un fichier image dont le nom sera passé en paramètre
+2. afficher les métadonnées d'un fichier image dont le nom sera passé en argument
 <br></br>
         commande à taper : `java -jar myCli.jar nom_image.png`
 
-3. cacher un message/texte dans une image, le message et le nom de l'image sera passé en paramètre
+3. cacher un message/texte dans une image, le message et le nom de l'image sera passé en argument
 <br></br>
         commande à taper : `java -jar myCli.jar -f nom_image.png -s "message_secret"`
 
-4. extraire le message dissimulé dans l'image, le nom de l'image contenant le message caché sera passé en paramètre
+4. extraire le message dissimulé dans l'image, le nom de l'image contenant le message caché sera passé en argument
 <br></br>
         commande à taper : `java -jar myCli.jar -f nom_image.png -s "message_secret"`
 
@@ -43,7 +43,7 @@ En mode CLI, l'utilisateur peut :
 
 ## Utilisation et exécutions en mode GUI
 
-Ce projet peut être exécuté en GUI à l'aide d'un <b>fichier jar</b>.
+Ce projet peut être exécuté en mode GUI à l'aide d'un <b>fichier jar</b>.
 <br></br>
 le ficher se nomme : myGui.jar
 <br></br>
