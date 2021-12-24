@@ -20,7 +20,7 @@ le ficher se nomme : myCli.jar
 En mode CLI, l'utilisateur peut :
 <br></br>
 
-1. examiner explorer un dossier, dont le nom sera passé en paramètre ou l'utilisateur devra mettre un '.'
+1. explorer un dossier, dont le nom sera passé en argument ou l'utilisateur devra mettre un '.'
 <br></br>
         commande à taper : `java -jar myCli.jar d .`  ou `java -jar myCli.ajr -d images`
 
@@ -28,13 +28,13 @@ En mode CLI, l'utilisateur peut :
 <br></br>
         commande à taper : `java -jar myCli.jar nom_image.png`
 
-3. cacher un message/texte dans une image, le message et le nom de l'image sera passé en argument
+3. cacher un message/texte dans une image, le message et le nom de l'image seront passés en argument
 <br></br>
         commande à taper : `java -jar myCli.jar -f nom_image.png -s "message_secret"`
 
 4. extraire le message dissimulé dans l'image, le nom de l'image contenant le message caché sera passé en argument
 <br></br>
-        commande à taper : `java -jar myCli.jar -f nom_image.png -s "message_secret"`
+        commande à taper : `java -jar myCli.jar -f nom_image_encode.png -e"`
 
 5. pour avoir des aides
 <br></br>   
