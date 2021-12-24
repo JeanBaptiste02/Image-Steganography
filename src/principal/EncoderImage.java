@@ -26,12 +26,12 @@ public class EncoderImage extends FileExtension implements TabColor {
 
 	
 	/**
-	 * la methode monString permet de convertir message initial en message binaire
+	 * la methode monString permet de convertir le message initial en message binaire
 	 * @param message indique le message
 	 * @return retourne le message binaire
 	 */
 	public String monstring (String message) {
-		byte[] convMess = message.getBytes(); // chaque caractere du message sera converti en "decimal" qui sera stocker dans un tableau
+		byte[] convMess = message.getBytes(); // chaque caractere du message sera converti en une séquence de byte qui sera stocker dans un tableau
 		String messBinaire = "";
 		
 		int i = 0;
@@ -50,7 +50,7 @@ public class EncoderImage extends FileExtension implements TabColor {
 	/**
 	 * la methode encodeLimage permet de cacher le message binaire dans une image
 	 * @param monBit indique le bit
-	 * @param monImage indique l'image est question qui sera encode
+	 * @param monImage indique l'image est question qui va contenir le message encode
 	 * @return retourne l'image
 	 */
 	public BufferedImage encodeLimage (String monBit, BufferedImage monImage) {

@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 /**
- * la classe ExploRep permet d'explorer un repertoire, c'est a dire, de lister des fichiers images de type png et jpeg des dossiers et des sous dossiers
+ * la classe ExploRep permet d'explorer un repertoire, c'est a dire, lister des fichiers images de type png et jpeg des dossiers et des sous dossiers
  * @author D.JEAN BAPTISTE & E.SRIGURU
  *
  */
@@ -14,7 +14,7 @@ public class ExploRep extends FileExtension{
 	
 	/**
 	 * Construit et initialise un chemin
-	 * @param monChemin indique le chemin de l'image
+	 * @param monChemin indique le chemin vers l'image
 	 */
 	public ExploRep(String monChemin) {
 		super(monChemin);
@@ -22,7 +22,7 @@ public class ExploRep extends FileExtension{
 	}
 	
 	/**
-	 * estVideF verifie si un tableau de fichier est vide, si oui, il retourne vraie, si non faux
+	 * estVideF verifie si un tableau de fichiers est vide, si oui, il retourne vraie, si non faux
 	 * @param f est un tableau de File et permet
 	 * @return retourne un booleen
 	 */
@@ -34,7 +34,7 @@ public class ExploRep extends FileExtension{
 	
 	
 	/**
-	 * la methode maListe permet de faire une liste des fichiers dans un certain chemin si le repertoire existe, si non elle lance une exception
+	 * la methode maListe permet de faire une liste des fichiers d'un certain chemin si le repertoire existe, si non elle lance une exception
 	 * @throws DossierNexistePas
 	 */
 	public void maListe() throws DossierNexistePas{
@@ -47,18 +47,18 @@ public class ExploRep extends FileExtension{
 	}
 	
 	/**
-	 * lister permet d'explorer un repertoire recursivement
+	 * la methode lister permet d'explorer un repertoire recursivement
 	 * @param cheminRep indique le chemin du repertoire
 	 */
 	public void lister(String cheminRep) {
 		File rep = new File(cheminRep);
-		File[] mes_fichiers = rep.listFiles(); //retourne un tableau de fichiers (a verifier)
+		File[] mes_fichiers = rep.listFiles(); //retourne un tableau de fichiers 
 		if(!(estVideF(mes_fichiers))) {
 			for (File f : mes_fichiers) {
                 if (f.isDirectory()) { //verifie si le fichier est un repertoire, si oui -> vrai, si non -> faux
                     lister(f.getAbsolutePath()); //recursive
 			    } else if (imageVerifExt(f)) {
-			    	       images.add(f.getName()); //ajout les noms des image qui finissent pas png et jpg dans l'arrayList
+			    	       images.add(f.getName()); //ajoute les noms des image qui finissent pas png et jpg dans l'arrayList
 			    }
 		    }	    
 		}

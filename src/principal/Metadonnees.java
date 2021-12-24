@@ -10,7 +10,7 @@ import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
 
 /**
- * la classe Metadonnees permet d'afficher les metadonnees d'une image de png ou de type jpeg
+ * la classe Metadonnees permet d'afficher les metadonnees d'une image de type png ou de type jpeg
  * @author D.JEAN BAPTISTE & E.SRIGURU
  *
  */
@@ -41,7 +41,7 @@ public class Metadonnees extends FileExtension{
 	}
 	
 	/**
-	 * la methode print permet d'afficher les metadonnes d'un fichier image donne
+	 * la methode print permet d'afficher les metadonnes d'un fichier image 
 	 * @param meta indique les metadonnees
 	 * @return retourne les metadonnees a afficher
 	 */

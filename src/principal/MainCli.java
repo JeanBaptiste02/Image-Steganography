@@ -12,14 +12,14 @@ import com.drew.imaging.ImageMetadataReader;
 import com.drew.imaging.ImageProcessingException;
 import com.drew.metadata.Metadata;
 /**
- * la classe MainCli permet faire l'instanciation de toutes les classes et de les executer
- * @author DAMODARANE Jean-Baptiste & ELUMALAI Sriguru
+ * la classe MainCli est le point d'entrée de l'application qui permet de faire l'instanciation de toutes les classes et de les executer
+ * @author D.Jean-Baptiste & E.Sriguru
  *
  */
 public class MainCli {
 	
 	/**
-	 * Les instanciations et les appels des methodes et des classes sont faits dans cette methode
+	 * Les instanciations et les appels des methodes et des classes sont faites dans cette methode
 	 * @param args est un tableau de String
 	 * 
 	 */
@@ -103,12 +103,12 @@ public class MainCli {
 			if(args[0].equals("-f") && args[2].equals("-e")) {
 				File imageEncode = new File(args[1]);
 				
-				String filePath = imageEncode.getAbsolutePath();
+				String cheminFile = imageEncode.getAbsolutePath();
 
-				File outFile = new File(filePath);
+				File fichierEnco = new File(cheminFile);
 				BufferedImage image = null;
 
-				image = ImageIO.read(outFile);
+				image = ImageIO.read(fichierEnco);
 
 				DecoderImage var = new DecoderImage(null, image);
 				
@@ -128,12 +128,12 @@ public class MainCli {
                          String nomImage = args[1];
                          File inFile = new File(nomImage);
                          BufferedImage initImage = null;
-                         initImage = ImageIO.read(inFile);
+                         initImage = ImageIO.read(inFile); //prend l'image originale
 
-                         String message = args[3];
+                         String message = args[3]; //le message en String
 
                          EncoderImage var = new EncoderImage(message,initImage); 
-                         String bitMsg = var.monstring(message);
+                         String bitMsg = var.monstring(message); //message converti en message binaire
                          if (var.verifPng(inFile)) {
                              BufferedImage newImage = var.encodeLimage(bitMsg,initImage);
                              System.out.println("Veuillez saisir le nom du fichier sous lequel vous souhaitez enregistrer l'image :");

@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 /**
- * la classe DecoderImage permet de decoder et montrer le message qui a ete cache dans une image donnee
+ * la classe DecoderImage permet de decoder et d'extraire le message qui a ete cache dans une image donnee
  * @author D.JEAN BAPTISTE & E.SRIGURU
  *
  */
@@ -25,9 +25,9 @@ public class DecoderImage implements TabColor {
 
 	
 	/**
-	 * la methode decodeLeMessage permet de convertir le message binaire en un message de charactere
-	 * @param image indique l'image en question
-	 * @return retourne des bits
+	 * la methode decodeLeMessage permet de retourner le message en binaire qui est dans cache dans l'image
+	 * @param image indique l'image contenant le message encode
+	 * @return retourne une sequence de bits
 	 */
 	public String decodeLeMessage(BufferedImage image) {
 		StringBuilder constructBits = new StringBuilder();
