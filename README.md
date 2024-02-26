@@ -1,4 +1,4 @@
-# PROJET S3 METADONNEES DES FICHIERS IMAGES ET STEGANOGRAPHIE PAR DAMODARANE.JEAN-BAPTISTE et ELUMALAI.SRIGURU
+# METADONNEES DES FICHIERS IMAGES ET STEGANOGRAPHIE
 
 ## Introduction
 Ce projet a été réalisé par DAMODARANE Jean-Baptiste et ELUMALAI Sriguru, étudiants en Licence 2 Informatique au sein du groupe C. Il s'articule autour du concept de stéganographie, une technique visant à dissimuler des informations, telles que des messages, au sein de supports numériques, principalement des fichiers image.
@@ -77,4 +77,5 @@ java -jar myGui.jar
 4. Pour decoder l'image, l'utilisateur doit se placer dans l'onglet correspondant, choisir le fichier image qui contient le message secret et appuyer sur le bouton decoder
 ![image](https://user-images.githubusercontent.com/91695685/147091328-41b617f3-78cd-4169-9708-a0314f231803.png)
 
-# © DAMODARANE Jean-Baptiste et ELUMALAI Sriguru. Tous droits réservés.
+# Contribution
+Pour toute contribution ou réutilisation de ce projet, veuillez mentionner les noms des développeurs de ce projet : [DAMODARANE Jean-Baptiste](https://github.com/JeanBaptiste02) et [ELUMALAI Sriguru](https://github.com/Sriguru95). Pour collaborer, veuillez les contacter pour obtenir leur consentement formel.
